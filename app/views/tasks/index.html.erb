@@ -1,0 +1,13 @@
+
+<h1>All the tasks</h1>
+
+<ul>
+  <% @tasks.each do |resto| %>
+    <li><%= link_to resto.name, task_path(resto) %>(<%= resto.rating %>)<p><%= link_to "edit this task", edit_task_path(resto) %></p>
+
+<p><%= link_to "delete this task", task_path(resto), method: :delete %></p>
+</li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add a task", new_task_path %></p>
